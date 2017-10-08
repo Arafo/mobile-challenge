@@ -58,12 +58,21 @@
                                             <action selector="buyButtonTap:" destination="BV1-FR-VrT" eventType="touchUpInside" id="phG-pM-v2r"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cgP-yM-Irp">
+                                        <rect key="frame" x="20" y="575" width="335" height="0.0"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="cgP-yM-Irp" secondAttribute="trailing" constant="20" id="4hh-yw-9DR"/>
+                                    <constraint firstItem="cgP-yM-Irp" firstAttribute="leading" secondItem="ANu-pz-cT6" secondAttribute="leading" constant="20" id="6Vm-T9-uF2"/>
                                     <constraint firstAttribute="bottom" secondItem="LCw-EZ-AU4" secondAttribute="bottom" constant="24" id="77u-j9-QFq"/>
                                     <constraint firstItem="YmT-bP-eMi" firstAttribute="centerX" secondItem="ANu-pz-cT6" secondAttribute="centerX" id="FwM-6r-JsU"/>
                                     <constraint firstItem="Y5d-yD-fEW" firstAttribute="top" secondItem="ANu-pz-cT6" secondAttribute="top" constant="20" id="RRW-Dz-e0d"/>
+                                    <constraint firstItem="LCw-EZ-AU4" firstAttribute="top" secondItem="cgP-yM-Irp" secondAttribute="bottom" constant="20" id="UO3-xF-7b6"/>
                                     <constraint firstItem="LCw-EZ-AU4" firstAttribute="centerX" secondItem="ANu-pz-cT6" secondAttribute="centerX" id="Zal-0J-bDl"/>
                                     <constraint firstItem="YmT-bP-eMi" firstAttribute="centerY" secondItem="ANu-pz-cT6" secondAttribute="centerY" id="Zdg-oJ-t1l"/>
                                     <constraint firstItem="Y5d-yD-fEW" firstAttribute="centerX" secondItem="ANu-pz-cT6" secondAttribute="centerX" id="xx4-pj-U0b"/>
@@ -81,6 +90,9 @@
                     </view>
                     <connections>
                         <outlet property="buyButton" destination="Y5d-yD-fEW" id="5Ak-fn-fdX"/>
+                        <outlet property="captureButton" destination="LCw-EZ-AU4" id="rnP-lX-fqA"/>
+                        <outlet property="debugLabel" destination="cgP-yM-Irp" id="4vq-T9-gH1"/>
+                        <outlet property="indicatorImage" destination="YmT-bP-eMi" id="BET-Gn-fLf"/>
                         <outlet property="sceneView" destination="ANu-pz-cT6" id="6su-C2-R9a"/>
                     </connections>
                 </viewController>

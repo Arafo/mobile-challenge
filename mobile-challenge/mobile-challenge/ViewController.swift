@@ -14,7 +14,12 @@ import Vision
 class ViewController: UIViewController {
 
     @IBOutlet var sceneView: ARSCNView!
+    @IBOutlet weak var captureButton: UIButton!
+    @IBOutlet weak var indicatorImage: UIImageView!
     @IBOutlet weak var buyButton: UIButton!
+    @IBOutlet weak var debugLabel: UILabel!
+    
+    let debug = true
     
     var request: VNCoreMLRequest!
     var latestPrediction : Product = Product()
@@ -43,7 +48,9 @@ class ViewController: UIViewController {
         self.sceneView.delegate = self
         
         // Show statistics such as fps and timing information
-        self.sceneView.showsStatistics = true
+        if debug {
+            self.sceneView.showsStatistics = true
+        }
         
         self.sceneView.autoenablesDefaultLighting = true
         
@@ -162,7 +169,8 @@ extension ViewController {
                 return
             }
             
-            if observation.confidence >= 0.8 {
+            if observation.confidence >= 0.9 {
+
                 let prediction = [(Prediction) (observation.identifier, Double(observation.confidence)),
                                   (Prediction) (observations[1].identifier, Double(observations[1].confidence)),
                                   (Prediction) (observations[2].identifier, Double(observations[2].confidence)),
@@ -170,10 +178,22 @@ extension ViewController {
                 latestPrediction = Product(string: observation.identifier)
                 
                 DispatchQueue.main.async {
+                    self.captureButton.isEnabled = true
+                    self.indicatorImage.tintColor = UIColor.green
+                    if self.debug {
+                        self.debugLabel.text = ""
+                    }
                     self.show(results: prediction)
                 }
             } else {
                 print("Low confidence")
+                DispatchQueue.main.async {
+                    self.captureButton.isEnabled = false
+                    self.indicatorImage.tintColor = UIColor.red
+                    if self.debug {
+                        self.debugLabel.text = "Low confidence: \(observation.confidence)"
+                    }
+                }
             }
         }
     }
