@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BV1-FR-VrT">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="adineuePRO-Regular.otf">
+            <string>adineuePRO-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tXr-a1-R10">
+            <objects>
+                <viewController id="BV1-FR-VrT" customClass="ViewController" customModule="mobile_challenge" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="VF8-k9-Cnk">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ANu-pz-cT6" customClass="ARSCNView">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LCw-EZ-AU4">
+                                        <rect key="frame" x="163" y="595" width="48" height="48"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="48" id="N3H-Wc-2s6"/>
+                                            <constraint firstAttribute="height" constant="48" id="r89-z7-tH1"/>
+                                        </constraints>
+                                        <state key="normal" title="Button" image="shutter"/>
+                                        <connections>
+                                            <action selector="handleTap:" destination="BV1-FR-VrT" eventType="touchUpInside" id="qL9-nn-3SK"/>
+                                        </connections>
+                                    </button>
+                                    <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="indicator" translatesAutoresizingMaskIntoConstraints="NO" id="YmT-bP-eMi">
+                                        <rect key="frame" x="163" y="309.5" width="48" height="48"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="48" id="AGi-KA-55h"/>
+                                            <constraint firstAttribute="height" constant="48" id="sII-8b-GG2"/>
+                                        </constraints>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y5d-yD-fEW">
+                                        <rect key="frame" x="127.5" y="20" width="120" height="36"/>
+                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="Ar0-Cu-ZHg"/>
+                                            <constraint firstAttribute="height" constant="36" id="SBa-ba-5MF"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="adineuePRO-Regular" family="adineue PRO" pointSize="14"/>
+                                        <state key="normal" title="Buy">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="buyButtonTap:" destination="BV1-FR-VrT" eventType="touchUpInside" id="phG-pM-v2r"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="LCw-EZ-AU4" secondAttribute="bottom" constant="24" id="77u-j9-QFq"/>
+                                    <constraint firstItem="YmT-bP-eMi" firstAttribute="centerX" secondItem="ANu-pz-cT6" secondAttribute="centerX" id="FwM-6r-JsU"/>
+                                    <constraint firstItem="Y5d-yD-fEW" firstAttribute="top" secondItem="ANu-pz-cT6" secondAttribute="top" constant="20" id="RRW-Dz-e0d"/>
+                                    <constraint firstItem="LCw-EZ-AU4" firstAttribute="centerX" secondItem="ANu-pz-cT6" secondAttribute="centerX" id="Zal-0J-bDl"/>
+                                    <constraint firstItem="YmT-bP-eMi" firstAttribute="centerY" secondItem="ANu-pz-cT6" secondAttribute="centerY" id="Zdg-oJ-t1l"/>
+                                    <constraint firstItem="Y5d-yD-fEW" firstAttribute="centerX" secondItem="ANu-pz-cT6" secondAttribute="centerX" id="xx4-pj-U0b"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Ar0-dG-v3O" firstAttribute="bottom" secondItem="ANu-pz-cT6" secondAttribute="bottom" id="3ph-hq-Jx0"/>
+                            <constraint firstItem="ANu-pz-cT6" firstAttribute="leading" secondItem="Ar0-dG-v3O" secondAttribute="leading" id="BQl-RI-wou"/>
+                            <constraint firstItem="ANu-pz-cT6" firstAttribute="top" secondItem="VF8-k9-Cnk" secondAttribute="top" id="RQr-Fe-k9w"/>
+                            <constraint firstItem="Ar0-dG-v3O" firstAttribute="trailing" secondItem="ANu-pz-cT6" secondAttribute="trailing" id="WSo-Ji-9y1"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Ar0-dG-v3O"/>
+                    </view>
+                    <connections>
+                        <outlet property="buyButton" destination="Y5d-yD-fEW" id="5Ak-fn-fdX"/>
+                        <outlet property="sceneView" destination="ANu-pz-cT6" id="6su-C2-R9a"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="132.68365817091455"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="indicator" width="40" height="40"/>
+        <image name="shutter" width="48" height="48"/>
+    </resources>
+</document>
